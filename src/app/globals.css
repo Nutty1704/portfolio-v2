@@ -16,6 +16,7 @@
 @theme {
   --color-primary: var(--color-blue-600);
   --color-off-bg: var(--color-gray-50);
+  --color-primary-foreground: var(--color-white);
 }
 
 body {
