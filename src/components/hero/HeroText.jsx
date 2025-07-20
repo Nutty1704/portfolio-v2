@@ -1,13 +1,10 @@
-import React from "react";
 import Button from "../ui/Button";
-import { Download, Github, Linkedin, Mail } from "lucide-react";
-import Link from "next/link";
-import { links } from "@/data/me";
+import { Download, Mail } from "lucide-react";
 import SocialLinks from "../SocialLinks";
 
 const HeroText = ({ containerClass }) => {
   return (
-    <div className={`${containerClass}`}>
+    <div data-scroll data-scroll-speed='-0.03' className={`${containerClass}`}>
       <div className="flex flex-col gap-8">
         <div className="space-y-4">
           <h2 className="text-2xl lg:text-3xl text-gray-600 font-light">

@@ -21,7 +21,7 @@ const floaters = [
 
 const HeroImg = ({ containerClass }) => {
   return (
-    <div className={`${containerClass}`}>
+    <div data-scroll data-scroll-speed="0.08" className={`${containerClass}`}>
       <div className="flex justify-center items-center">
         <div className="relative lg:p-15">
           <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gray-100 shadow-2xl">
