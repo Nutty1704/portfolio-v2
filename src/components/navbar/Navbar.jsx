@@ -16,7 +16,7 @@ const Navbar = () => {
       <NavbarAnimations />
       <nav
         id="navbar"
-        className="fixed top-0 w-full border-b border-gray-100 bg-white/80 backdrop:blur-md z-50"
+        className="fixed top-0 w-full border-b border-gray-100 bg-white z-50"
       >
         <div className="p-4 container mx-auto flex justify-between items-center">
           <Name />

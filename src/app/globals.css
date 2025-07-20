@@ -39,3 +39,36 @@ body {
     @apply flex items-center justify-center
   }
 }
+
+
+.blob {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 20;
+  display: none;
+  will-change: transform;
+}
+
+@media (min-width: 1536px) {
+ .blob {
+   display: block;
+ }
+}
+
+#blob-1 {
+  top: 60dvh;
+  right: -13%;
+  height: 55vh;
+  width: 30%;
+  rotate: 90deg;
+  background-image: url('/blobs/blob1.svg');
+}
+
+#blob-2 {
+  background-image: url('/blobs/blob1.svg');
+  width: 24%;
+  height: 36vh;
+  left: -8%;
+  top: -5dvh
+}
