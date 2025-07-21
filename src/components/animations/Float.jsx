@@ -1,7 +1,9 @@
 "use client";
 
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const getAnimProperties = (xOffset, yOffset, moveSpeed) => {
   const distance = Math.sqrt(
@@ -15,7 +17,15 @@ const getAnimProperties = (xOffset, yOffset, moveSpeed) => {
   return { x, y, duration };
 };
 
-const Float = ({ elementId, maxStepX = 30, maxStepY = 27, moveSpeed = 5 }) => {
+const Float = ({ 
+  elementId, 
+  parentId, 
+  maxStepX = 30, 
+  maxStepY = 27, 
+  moveSpeed = 5 
+}) => {
+  const timelineRef = useRef(null);
+
   // get random offset based on step size
   const getRandomPoint = () => {
     const targetX = gsap.utils.random(-maxStepX, maxStepX);
@@ -24,17 +34,13 @@ const Float = ({ elementId, maxStepX = 30, maxStepY = 27, moveSpeed = 5 }) => {
     return { ...getAnimProperties(targetX, targetY, moveSpeed), targetX, targetY };
   };
 
-  // animate float
-  useGSAP(() => {
-    if (!elementId) return;
-
-    const element = document.getElementById(elementId);
-    if (!element) {
-      console.warn(`Float: Element with id "${elementId}" not found`);
-      return;
+  // create the animation timeline
+  const createAnimation = (element) => {
+    if (timelineRef.current) {
+      timelineRef.current.kill();
     }
 
-    // loop animation infintely
+    // loop animation infinitely
     const tl = gsap.timeline({ repeat: -1 });
 
     // store total offset so final point can be calculated
@@ -56,10 +62,46 @@ const Float = ({ elementId, maxStepX = 30, maxStepY = 27, moveSpeed = 5 }) => {
       });
 
     tl.to(element, {
-      ...getAnimProperties(xOffset * -1, yOffset * -1, moveSpeed), // multiply by -1 so the offset can be compensated for in final point
+      ...getAnimProperties(xOffset * -1, yOffset * -1, moveSpeed),
       ease: "sine.inOut",
     });
-  }, [elementId]);
+
+    timelineRef.current = tl;
+    return tl;
+  };
+
+  // animate float with optimization
+  useGSAP(() => {
+    if (!elementId || !parentId) return;
+
+    const element = document.getElementById(elementId);
+    const parent = document.getElementById(parentId);
+    
+    if (!element) {
+      console.warn(`Float: Element with id "${elementId}" not found`);
+      return;
+    }
+    
+    if (!parent) {
+      console.warn(`Float: Parent with id "${parentId}" not found`);
+      return;
+    }
+
+    // Create the animation
+    const timeline = createAnimation(element);
+
+    // pause animations when not in view to save processing power
+    ScrollTrigger.create({
+      trigger: parent,
+      start: "top bottom",    
+      end: "bottom top",        
+      markers: true,          
+      onEnter: () => timeline?.play(),
+      onLeave: () => timeline?.pause(),
+      onEnterBack: () => timeline?.play(),
+      onLeaveBack: () => timeline?.pause(),
+    });
+  }, [elementId, parentId]);
 
   return null;
 };

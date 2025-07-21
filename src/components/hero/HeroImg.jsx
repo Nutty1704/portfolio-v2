@@ -69,7 +69,7 @@ const HeroImg = ({ containerClass }) => {
           {/* Floating elements for animation */}
           {floaters.map(({ className, Icon, iconClass }, i) => (
             <Floater id={`floater-${i}`} key={i} className={className}>
-              <Float elementId={`floater-${i}`} moveSpeed={6} />
+              <Float elementId={`floater-${i}`} parentId={'hero'} moveSpeed={6} />
               <Icon className={iconClass} />
             </Floater>
           ))}
