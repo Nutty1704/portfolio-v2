@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavbarAnimations from "./NavbarAnimations";
 import Hamburger from "./Hamburger";
+import NavItem from "./NavItem";
 
 export const links = [
   { text: "Home", href: "#hero" },
@@ -22,9 +23,7 @@ const Navbar = () => {
           <Name />
           <ul className="hidden md:flex items-center gap-8 text-gray-600">
             {links.map(({ text, href }) => (
-              <li key={href} className="hover:text-gray-900 transition-colors">
-                <Link href={href}>{text}</Link>
-              </li>
+              <NavItem key={href} text={text} href={href} className='hover:text-gray-900 transition-colors' />
             ))}
           </ul>
         </div>

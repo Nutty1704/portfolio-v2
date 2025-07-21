@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { animConfig } from "./NavbarAnimations";
+import NavItem from "./NavItem";
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,15 +113,7 @@ const Hamburger = () => {
         {showMenu && (
           <ul id="hamburger-list" className="space-y-3 pl-2">
             {links.map(({ text, href }) => (
-              <li key={href} className="text-lg font-semibold tracking-wider">
-                <Link
-                  href={href}
-                  className="block"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {text}
-                </Link>
-              </li>
+              <NavItem key={href} text={text} href={href} className='text-lg font-semibold tracking-wider' />
             ))}
           </ul>
         )}
