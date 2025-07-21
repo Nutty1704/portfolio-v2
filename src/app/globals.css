@@ -21,6 +21,7 @@ body {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-inter: var(--font-inter);
 }
 
 @theme {
@@ -29,6 +30,7 @@ body {
   --color-primary-darker: var(--color-blue-700);
   --color-background-secondary: var(--color-gray-50);
   --color-primary-foreground: var(--color-white);
+  --color-gray-150: hsl(0, 0%, 94.6%);
 }
 
 @layer utilities {

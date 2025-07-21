@@ -6,7 +6,7 @@ const HeroTitle = ({ containerClass }) => {
   return (
     <div className={`${containerClass}`}>
       <div className="flex flex-col gap-4">
-        <Badge>Available for hire</Badge>
+        <Badge containerClass='px-3 py-1 !text-sm'>Available for hire</Badge>
         <Title />
       </div>
     </div>

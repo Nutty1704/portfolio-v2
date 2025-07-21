@@ -1,11 +1,16 @@
+const variantStyles = {
+  default: "border-2 border-gray-100",
+  secondary: "border-transparent bg-gray-150 hover:bg-gray-200/80",
+};
 
-
-const Badge = ({ children, containerClass }) => {
+const Badge = ({ children, containerClass, variant = "default" }) => {
   return (
-    <div className={`border-2 border-gray-100 font-semibold px-3 inline-flex items-center rounded-full w-fit ${containerClass}`}>
-      { children }
+    <div
+      className={`w-fit inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${variantStyles[variant]} ${containerClass}`}
+    >
+      {children}
     </div>
-  )
-}
+  );
+};
 
-export default Badge
+export default Badge;
