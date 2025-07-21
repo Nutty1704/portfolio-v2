@@ -8,7 +8,6 @@ export const animConfig = {
   trigger: '#hero',
   start: 'bottom 4%',
   end: 'bottom 4%-50px',
-  markers: true,
 }
 
 const NavbarAnimations = () => {
