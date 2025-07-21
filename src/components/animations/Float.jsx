@@ -93,9 +93,8 @@ const Float = ({
     // pause animations when not in view to save processing power
     ScrollTrigger.create({
       trigger: parent,
-      start: "top bottom",    
+      start: "top bottom",
       end: "bottom top",        
-      markers: true,          
       onEnter: () => timeline?.play(),
       onLeave: () => timeline?.pause(),
       onEnterBack: () => timeline?.play(),
