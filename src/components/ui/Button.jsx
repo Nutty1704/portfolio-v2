@@ -10,9 +10,9 @@ const sizes = {
 const getClassNames = (variant) => {
   switch (variant) {
     case "default":
-      return "bg-primary text-primary-foreground hover:brightness-90";
+      return "bg-primary text-primary-foreground hover:bg-primary-darker";
     case "outline":
-      return "border-2 border-gray-200";
+      return "border-2 border-gray-200 hover:border-gray-400";
     default:
       "";
   }
