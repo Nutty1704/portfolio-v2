@@ -6,8 +6,9 @@ import gsap from "gsap";
 
 export const animConfig = {
   trigger: '#hero',
-  start: 'bottom top',
-  end: 'bottom top-50px',
+  start: 'bottom 4%',
+  end: 'bottom 4%-50px',
+  markers: true,
 }
 
 const NavbarAnimations = () => {
