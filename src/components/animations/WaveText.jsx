@@ -29,6 +29,7 @@ const WaveText = ({ id }) => {
         y: '-=10px',
         scale: 1.15,
         duration: 0.1,
+        onStart: () => {char.classList.add('!text-primary')}
       }, '<0.05');
     })
   }, [id]);

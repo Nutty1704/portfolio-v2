@@ -19,7 +19,7 @@ const HeroText = ({ containerClass }) => {
         </div>
 
         <div className="flex items-center gap-4">
-          <AnimatedButton id={'hero-gitouch-btn'} size="lg">
+          <AnimatedButton id={'hero-gitouch-btn'} size="lg" delay={0.65}>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
               <span>Get In Touch</span>
