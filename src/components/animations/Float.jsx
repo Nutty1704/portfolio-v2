@@ -22,7 +22,8 @@ const Float = ({
   parentId, 
   maxStepX = 30, 
   maxStepY = 27, 
-  moveSpeed = 5 
+  moveSpeed = 5,
+  ease = 'sine.inOut' 
 }) => {
   const timelineRef = useRef(null);
 
@@ -55,7 +56,7 @@ const Float = ({
 
         tl.to(element, {
           ...animProperties,
-          ease: "sine.inOut",
+          ease,
         });
         xOffset += targetX;
         yOffset += targetY;
@@ -63,7 +64,7 @@ const Float = ({
 
     tl.to(element, {
       ...getAnimProperties(xOffset * -1, yOffset * -1, moveSpeed),
-      ease: "sine.inOut",
+      ease,
     });
 
     timelineRef.current = tl;
