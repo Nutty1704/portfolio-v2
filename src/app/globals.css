@@ -67,6 +67,9 @@ body {
   .blob {
     display: block;
   }
+  #blob-1, #blob-2 {
+    animation-play-state: running;
+  }
 }
 
 #blob-1 {
@@ -75,7 +78,12 @@ body {
   height: 55vh;
   width: 30%;
   rotate: 90deg;
+  opacity: 0;
+  will-change: transform;
   background-image: url("/blobs/blob1.svg");
+  animation-play-state: paused;
+  animation: slideInBottomRight 2s ease-out 0.5s forwards,
+    floatBottomRight 8s ease-in-out 2.65s infinite;
 }
 
 #blob-2 {
@@ -84,4 +92,89 @@ body {
   height: 36vh;
   left: -8%;
   top: -5dvh;
+  opacity: 0;
+  will-change: transform;
+  animation-play-state: paused;
+  animation: slideInTopLeft 1.3s ease-out 0.5s forwards,
+    floatTopLeft 15s ease-in-out 1.95s infinite;
+}
+
+@keyframes slideInTopLeft {
+  from {
+    opacity: 0.5;
+    translate: -50% -50%;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    translate: 0% 0%;
+    scale: 1;
+  }
+}
+
+@keyframes slideInBottomRight {
+  from {
+    opacity: 0;
+    translate: 50% 50%;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    translate: 0% 0%;
+    scale: 1;
+  }
+}
+
+/* Infinite floating animations */
+@keyframes floatTopLeft {
+  0%,
+  100% {
+    translate: 0% 0%;
+    scale: 1;
+    border-radius: 50% 40% 60% 30%;
+  }
+  25% {
+    translate: 4% -4%;
+    scale: 1.1;
+    border-radius: 40% 60% 30% 50%;
+  }
+  50% {
+    translate: -1% 1%;
+    scale: 0.9;
+    border-radius: 60% 30% 50% 40%;
+  }
+  75% {
+    translate: -3% -3%;
+    scale: 1.05;
+    border-radius: 30% 50% 40% 60%;
+  }
+}
+
+@keyframes floatBottomRight {
+  0%,
+  100% {
+    translate: 0% 0%;
+    scale: 1;
+    border-radius: 50% 40% 60% 30%;
+  }
+  20% {
+    translate: 1% 1.5%;
+    scale: 1.03;
+    border-radius: 40% 60% 30% 50%;
+  }
+  40% {
+    translate: -1% 0%;
+    scale: 1.01;
+    border-radius: 60% 30% 50% 40%;
+  }
+  60% {
+    translate: 1% -1.2%;
+    scale: 0.98;
+    border-radius: 30% 50% 40% 60%;
+  }
+  80% {
+    translate: 0.8% 1%;
+    scale: 1.01;
+    border-radius: 45% 35% 55% 45%;
+  }
 }
