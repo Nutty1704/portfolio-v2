@@ -23,6 +23,7 @@ const Float = ({
   maxStepX = 30, 
   maxStepY = 27, 
   moveSpeed = 5,
+  disabled = false,
   ease = 'sine.inOut' 
 }) => {
   const timelineRef = useRef(null);
@@ -73,7 +74,7 @@ const Float = ({
 
   // animate float with optimization
   useGSAP(() => {
-    if (!elementId || !parentId) return;
+    if (!elementId || !parentId || disabled) return;
 
     const element = document.getElementById(elementId);
     const parent = document.getElementById(parentId);

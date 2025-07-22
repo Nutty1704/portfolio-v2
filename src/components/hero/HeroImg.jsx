@@ -11,42 +11,42 @@ import Float from "../animations/Float";
 
 const floaters = [
   {
-    className: "bg-blue-100 top-[15%] right-[13%]",
+    className: "bg-blue-100 -top-[6%] lg:top-[15%] right-[13%]",
     Icon: Code,
     iconClass: "h-6 w-6 text-blue-600",
   },
   {
-    className: "bottom-[17%] left-[14%] bg-green-100",
+    className: "bottom-[17%] left-[14%] bg-green-100 hidden lg:block",
     Icon: Database,
     iconClass: "h-6 w-6 text-green-600",
   },
   {
-    className: "bg-blue-100 top-[8%] left-[15%] w-15 h-15",
+    className: "bg-blue-100 -left-[2%] top-[5%] lg:left-[15%] w-10 h-10 lg:w-15 lg:h-15",
     Icon: FaReact,
-    iconClass: "h-8 w-8 text-blue-600",
+    iconClass: "h-7 w-7 lg:h-8 lg:w-8 text-blue-600",
   },
   {
-    className: "bg-green-100 bottom-[25%] right-[-5%] w-15 h-15",
+    className: "bg-green-100 bottom-[38%] -right-[10%] lg:bottom-[25%] lg:-right-[5%] w-15 h-15",
     Icon: FaNodeJs,
     iconClass: "h-8 w-8 text-green-600",
   },
   {
-    className: "bg-gray-800 bottom-[4%] right-[17%] w-12 h-12",
+    className: "bg-gray-800 -bottom-[7%] lg:bottom-[4%] right-[17%] w-12 h-12",
     Icon: RiNextjsLine,
     iconClass: "h-7 w-7 text-white",
   },
   {
-    className: "bg-red-100 top-[39%] left-[-7%] !w-9 !h-9",
+    className: "bg-red-100 top-[39%] left-[-7%] !w-9 !h-9 hidden lg:block",
     Icon: RiAngularjsLine,
     iconClass: "h-6 w-6 text-red-400",
   },
   {
-    className: "bg-yellow-100 top-[-8%] left-[57%] w-13 h-13",
+    className: "bg-yellow-100 top-[-8%] left-[57%] w-13 h-13 hidden lg:block",
     Icon: FaCss3Alt,
     iconClass: "h-7 w-7 text-yellow-600",
   },
   {
-    className: "bg-yellow-100 bottom-[-5%] right-[57%] w-9 h-9",
+    className: "bg-yellow-100 bottom-[15%] lg:-bottom-[5%] right-[87%] lg:right-[57%] w-9 h-9",
     Icon: AiOutlinePython,
     iconClass: "h-6 w-6 text-yellow-600",
   },
@@ -69,7 +69,7 @@ const HeroImg = ({ containerClass }) => {
           {/* Floating elements for animation */}
           {floaters.map(({ className, Icon, iconClass }, i) => (
             <Floater id={`floater-${i}`} key={i} className={className}>
-              <Float elementId={`floater-${i}`} parentId={'hero'} moveSpeed={6} />
+              <Float elementId={`floater-${i}`} parentId={'hero'} moveSpeed={6} disabled={className.includes('hidden')} />
               <Icon className={iconClass} />
             </Floater>
           ))}
