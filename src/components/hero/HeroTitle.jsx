@@ -18,7 +18,7 @@ const Title = () => {
     <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
       Hi, I'm{" "}
       <span id="hero-name">
-        Abhijit <br className="hidden md:inline" /> Upadhyay
+        Abhijit <br className="inline sm:hidden lg:inline" /> Upadhyay
       </span>
       <WaveTextAnim id="hero-name" />
     </h1>
