@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
 }
 
 body {
@@ -31,6 +36,12 @@ body {
   --color-background-secondary: var(--color-gray-50);
   --color-primary-foreground: var(--color-white);
   --color-gray-150: hsl(0, 0%, 94.6%);
+  --color-input: var(--input);
+  --color-input-border: var(--color-gray-200);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
 }
 
 @layer utilities {
@@ -39,7 +50,7 @@ body {
   }
 
   .absolute-center {
-    @apply absolute top-1/2 left-1/2 -translate-1/2
+    @apply absolute top-1/2 left-1/2 -translate-1/2;
   }
 }
 
