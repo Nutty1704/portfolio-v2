@@ -10,7 +10,7 @@ import Footer from "@/components/footer/Footer";
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full !p-0 !m-0">
-      <div className="bg-background relative overflow-x-hidden">
+      <div className="bg-background relative overflow-x-hidden z-10">
         <Initialize />
         <div id='blob-1' data-scroll data-scroll-speed='0.3' aria-hidden className="blob" />
         <div id='blob-2' data-scroll data-scroll-speed='0.15' aria-hidden className="blob" />

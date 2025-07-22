@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer id='footer' className="bg-primary text-white sticky bottom-0 w-full -z-10 overflow-x-hidden h-[450px]">
+    <footer id='footer' className="bg-primary text-white sticky bottom-0 w-full overflow-x-hidden h-[450px]">
       <div className="w-full h-full pt-16 pb-8 px-8 flex flex-col items-center justify-end gap-6 relative">
         <div className="bg-black/30 absolute inset-0" />
-        <div className="flex flex-col items-center gap-4 z-10">
+        <div className="flex flex-col items-center gap-4 relative z-10">
           <div className="w-32 h-32 rounded-full overflow-hidden shadow-md shrink-0">
             <Image
               src="/profile.jpg"
