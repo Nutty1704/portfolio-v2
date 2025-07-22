@@ -20,6 +20,7 @@ const Projects = () => {
       {/* link to github */}
       <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
         <Button
+          id={'proj-git-btn'}
           variant="outline"
           size="lg"
           btnClass="!border-gray-300 !hover:border-gray-300 hover:bg-gray-100"

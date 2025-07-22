@@ -1,4 +1,5 @@
 import React from "react";
+import Magnetic from "../animations/Magnetic";
 
 const sizes = {
   default: "h-10 px-4 py-2",
@@ -18,11 +19,13 @@ const getClassNames = (variant) => {
   }
 };
 
-const Button = ({ children, variant = "default", size = 'default', btnClass }) => {
+const Button = ({ id, children, variant = "default", size = 'default', btnClass }) => {
   return (
     <button
+      id={id}
       className={`cursor-pointer text-sm font-medium transition-colors ${getClassNames(variant)} ${btnClass} ${sizes[size]}`}
     >
+      {id && <Magnetic id={id} />}
       {children}
     </button>
   );

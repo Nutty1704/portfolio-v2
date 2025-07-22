@@ -18,11 +18,12 @@ const HeroText = ({ containerClass }) => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button size="lg" btnClass={"flex items-center gap-2"}>
+          <Button id={'hero-gitouch-btn'} size="lg" btnClass={"flex items-center gap-2"}>
             <Mail className="h-4 w-4" />
             <span>Get In Touch</span>
           </Button>
           <Button
+            id={'hero-dlres-btn'}
             size="lg"
             variant="outline"
             btnClass={"flex items-center gap-2"}
