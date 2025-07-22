@@ -1,7 +1,9 @@
 "use client";
 
+import { animationBreakpoint } from "@/app/config";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 
 export const animConfig = {
@@ -11,6 +13,8 @@ export const animConfig = {
 }
 
 const NavbarAnimations = () => {
+  const isMobile = useMediaQuery({ maxWidth: animationBreakpoint });
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -31,7 +35,7 @@ const NavbarAnimations = () => {
 
     tl.to(
       '.hamburger-btn', {
-        x: '-=90px',
+        x: isMobile ? '-=75px' : '-=90px',
         duration: 0.5,
         ease: 'power2.inOut'
       },
