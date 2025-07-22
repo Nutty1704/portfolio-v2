@@ -27,7 +27,7 @@ const TimelineAnimation = ({ columnId }) => {
         duration: 0.4,
         ease: "back.out",
       },
-      `+=${i !== 0 ? 0.25 : 0.08}`
+      `+=${i !== 0 ? 0.15 : 0.08}`
     ).addLabel(labelName);
 
     // Animate line
