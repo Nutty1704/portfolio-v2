@@ -1,4 +1,5 @@
 import Button from "../ui/Button";
+import AnimatedButton from "../ui/animated-button/AnimatedButton";
 import { Download, Mail } from "lucide-react";
 import SocialLinks from "../SocialLinks";
 
@@ -18,10 +19,12 @@ const HeroText = ({ containerClass }) => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button id={'hero-gitouch-btn'} size="lg" btnClass={"flex items-center gap-2"}>
-            <Mail className="h-4 w-4" />
-            <span>Get In Touch</span>
-          </Button>
+          <AnimatedButton id={'hero-gitouch-btn'} size="lg">
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4" />
+              <span>Get In Touch</span>
+            </div>
+          </AnimatedButton>
           <Button
             id={'hero-dlres-btn'}
             size="lg"
