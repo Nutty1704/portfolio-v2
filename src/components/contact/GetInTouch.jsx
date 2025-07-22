@@ -24,12 +24,12 @@ const LinkBadge = ({ label, Icon, link, linkText }) => {
 
 const GetInTouch = () => {
   return (
-    <div className="space-y-8">
-      <div>
+    <div id='contact-get-in-touch' className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center lg:items-start">
         <h3 className="text-2xl font-semibold text-gray-900 mb-6">
           Get In Touch
         </h3>
-        <p className="text-gray-600 leading-relaxed mb-8">
+        <p className="text-gray-600 leading-relaxed mb-8 md:px-16 lg:px-0">
           Whether you have a project in mind, want to collaborate, or just want
           to say hello, I'd love to hear from you. Let's create something
           amazing together!

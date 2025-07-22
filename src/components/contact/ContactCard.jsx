@@ -23,7 +23,7 @@ const Field = ({ children }) => {
 
 const ContactCard = () => {
   return (
-    <Card id={'contact-card'} className="border border-input-border !shadow-xl max-w-[500px] perspective-distant">
+    <Card id={'contact-card'} className="border border-input-border !shadow-xl max-w-[500px] perspective-distant mx-auto">
       <Magnetic id={'contact-card'} threshold={0.035} leaveDealy={2} />
       <CardHeader>
         <CardTitle className='text-2xl mb-1'>Send me a message</CardTitle>
