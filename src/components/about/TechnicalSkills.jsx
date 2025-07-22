@@ -10,7 +10,7 @@ const TechnicalSkills = () => {
 
       <div className="space-y-5">
         <Skills Icon={Globe} title='Frontend' skills={frontendSkills} iconClass={'text-blue-600'} />
-        <Skills Icon={Database} title='Backend' skills={backendSkills} iconClass={'text-green-600'} />
+        <Skills Icon={Database} title='Backend' skills={backendSkills} iconClass={'!text-green-600'} />
         <Skills Icon={Code} title='Tools & Others' skills={otherSkills} iconClass={'text-purple-600'} />
       </div>
     </div>

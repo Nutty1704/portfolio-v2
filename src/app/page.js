@@ -2,6 +2,9 @@ import Hero from "@/components/hero/Hero";
 import Navbar from "@/components/navbar/Navbar";
 import Initialize from "./Initialize";
 import About from "@/components/about/About";
+import Projects from "@/components/projects/Projects";
+import Experience from "@/components/experience/Experience";
+import Contact from "@/components/contact/Contact";
 
 export default function Home() {
   return (
@@ -12,8 +15,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <div id='projects' className="bg-green-200 w-full h-[105dvh]" />
-      <div id='experience' className="bg-cyan-200 w-full h-[105dvh]" />
+      <Projects />
+      <Experience />
+      <Contact />
+      {/* safe load certain tailwind classes being passed down to components */}
+      <div className="text-green-600 bg-green-600 hidden" />
     </main>
   );
 }
