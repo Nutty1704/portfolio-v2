@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-const AnimateFill = ({ btnId }) => {
+const AnimateFill = ({ btnId, delay }) => {
 
   useGSAP(() => {
     if (!btnId) return;
@@ -22,6 +22,7 @@ const AnimateFill = ({ btnId }) => {
       left: '50%',
       borderRadius: '0%',
       width: '100%',
+      delay,
       duration: 0.4,
       ease: 'circ.in',
       onStart: () => content?.classList.add('!text-primary-foreground'),
