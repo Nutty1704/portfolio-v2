@@ -113,7 +113,9 @@ const Hamburger = () => {
         {showMenu && (
           <ul id="hamburger-list" className="space-y-3 pl-2">
             {links.map(({ text, href }) => (
-              <NavItem key={href} text={text} href={href} className='text-lg font-semibold tracking-wider' />
+              <div key={href} onClick={() => setIsOpen(false)}>
+                <NavItem text={text} href={href} className='text-lg font-semibold tracking-wider' />
+              </div>
             ))}
           </ul>
         )}
