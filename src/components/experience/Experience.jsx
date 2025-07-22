@@ -39,8 +39,8 @@ const Experience = () => {
         <SectionHeader title={'Experience & Education'} subtitle={'My journey in technology and continuous learning'} />
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <GridColumn title='Experience' columnInfo={experienceColumnInfo} color={'primary'} />
-          <GridColumn title='Education' columnInfo={educationColumnInfo} color={'green-600'} />
+          <GridColumn id={'exp-column'} title='Experience' columnInfo={experienceColumnInfo} color={'primary'} />
+          <GridColumn id={'edu-column'} title='Education' columnInfo={educationColumnInfo} color={'green-600'} />
         </div>
       </div>
     </section>
