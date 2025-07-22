@@ -16,7 +16,7 @@ const floaters = [
     iconClass: "h-6 w-6 text-blue-600",
   },
   {
-    className: "bottom-[17%] left-[14%] bg-green-100 hidden lg:block",
+    className: "bottom-[17%] left-[14%] bg-green-100 hidden lg:flex",
     Icon: Database,
     iconClass: "h-6 w-6 text-green-600",
   },
@@ -36,12 +36,12 @@ const floaters = [
     iconClass: "h-7 w-7 text-white",
   },
   {
-    className: "bg-red-100 top-[39%] left-[-7%] !w-9 !h-9 hidden lg:block",
+    className: "bg-red-100 top-[39%] left-[-7%] !w-9 !h-9 hidden lg:flex",
     Icon: RiAngularjsLine,
     iconClass: "h-6 w-6 text-red-400",
   },
   {
-    className: "bg-yellow-100 top-[-8%] left-[57%] w-13 h-13 hidden lg:block",
+    className: "bg-yellow-100 top-[-8%] left-[57%] w-13 h-13 hidden lg:flex",
     Icon: FaCss3Alt,
     iconClass: "h-7 w-7 text-yellow-600",
   },
