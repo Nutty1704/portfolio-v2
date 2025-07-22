@@ -91,6 +91,7 @@ const ContactAnimations = () => {
         scTarget,
         {
           scale: 1,
+          rotate: -16,
           ease: "back.out",
           duration: 0.18,
         },
@@ -100,6 +101,7 @@ const ContactAnimations = () => {
       // move logo left
       tl.to(scTarget, {
         x: 0,
+        rotate: 0,
         duration: 0.93,
         ease: "power2.out",
       }, '<0.13');
