@@ -19,13 +19,13 @@ const getClassNames = (variant) => {
   }
 };
 
-const Button = ({ id, children, variant = "default", size = 'default', btnClass }) => {
+const Button = ({ id, children, variant = "default", size = 'default', btnClass, magneticThreshold = 0.25 }) => {
   return (
     <button
       id={id}
       className={`cursor-pointer text-sm font-medium transition-colors ${getClassNames(variant)} ${btnClass} ${sizes[size]}`}
     >
-      {id && <Magnetic id={id} />}
+      {id && <Magnetic xThreshold={magneticThreshold} yThreshold={ magneticThreshold < 0.5 ? magneticThreshold * 2 : magneticThreshold } id={id} />}
       {children}
     </button>
   );

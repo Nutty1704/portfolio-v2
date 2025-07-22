@@ -5,9 +5,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 
-const Magnetic = ({ id, threshold = 0.1, scaleBoostPercent = 3 }) => {
-  if ( threshold < 0 || threshold > 1 ) {
-    throw Error('Threshold must be between 0 and 1')
+const Magnetic = ({ id, xThreshold = 0.1, yThreshold = 0.1, scaleBoostPercent = 3 }) => {
+  if ( xThreshold < 0 || xThreshold > 1 || yThreshold < 0 || yThreshold > 1 ) {
+    throw Error('Threshold values must be between 0 and 1')
   }
 
   const isMobile = useMediaQuery({ maxWidth: animationBreakpoint });
@@ -34,8 +34,8 @@ const Magnetic = ({ id, threshold = 0.1, scaleBoostPercent = 3 }) => {
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
-      const deltaX = (e.clientX - centerX) * threshold;
-      const deltaY = (e.clientY - centerY) * threshold;
+      const deltaX = (e.clientX - centerX) * xThreshold;
+      const deltaY = (e.clientY - centerY) * yThreshold;
 
       gsap.to(element, {
         x: deltaX,
@@ -52,7 +52,6 @@ const Magnetic = ({ id, threshold = 0.1, scaleBoostPercent = 3 }) => {
         y: 0,
         duration: 1,
         ease: "power2.out",
-        overwrite: true,
       });
     };
 
