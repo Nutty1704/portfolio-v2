@@ -9,13 +9,13 @@ const LinkBadge = ({ label, Icon, link, linkText }) => {
       href={link}
       target="_blank"
       rel='noopener noreferrer'
-      className="flex items-center gap-4 w-fit"
+      className="flex items-center gap-4 w-fit group hover:scale-105 transition-transform"
     >
-      <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center">
-        <Icon className="h-5 w-5 text-primary" />
+      <div className="anim-swipe-scale w-12 h-12 bg-primary/90 text-primary-foreground rounded-full flex items-center justify-center z-20">
+        <Icon className="h-5 w-5" />
       </div>
-      <div>
-        <p className="font-medium text-gray-900">{ label }</p>
+      <div className="anim-swipe-opacity z-10">
+        <p className="font-medium text-gray-900 group-hover:text-primary transition-colors">{ label }</p>
         <p className="text-gray-600">{ linkText || link }</p>
       </div>
     </Link>
@@ -29,7 +29,7 @@ const GetInTouch = () => {
         <h3 className="text-2xl font-semibold text-gray-900 mb-6">
           Get In Touch
         </h3>
-        <p className="text-gray-600 leading-relaxed mb-8 md:px-16 lg:px-0">
+        <p className="anim-lines text-gray-600 leading-relaxed mb-8 md:px-16 lg:px-0">
           Whether you have a project in mind, want to collaborate, or just want
           to say hello, I'd love to hear from you. Let's create something
           amazing together!
