@@ -2,13 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { links } from "./Navbar";
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { animConfig } from "./NavbarAnimations";
 import NavItem from "./NavItem";
+import MorphIcon from "./MorphIcon";
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +101,9 @@ const Hamburger = () => {
         onClick={() => setIsOpen((prev) => !prev)}
         className="hamburger-btn fixed top-5 z-[60] text-primary-foreground right-[-60px] p-4 rounded-full"
       >
-        {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+        <div className="h-7 w-7">
+          <MorphIcon isOpen={isOpen} />
+        </div>
       </button>
 
       <nav
@@ -114,7 +115,11 @@ const Hamburger = () => {
           <ul id="hamburger-list" className="space-y-3 pl-2">
             {links.map(({ text, href }) => (
               <div key={href} onClick={() => setIsOpen(false)}>
-                <NavItem text={text} href={href} className='text-lg font-semibold tracking-wider' />
+                <NavItem
+                  text={text}
+                  href={href}
+                  className="text-lg font-semibold tracking-wider"
+                />
               </div>
             ))}
           </ul>
