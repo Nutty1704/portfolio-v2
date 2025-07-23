@@ -2,19 +2,26 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useMediaQuery } from "react-responsive";
 
 const getMovement = (i, cardWidth, start, gap, center) =>
   start - center + cardWidth / 2 + i * (cardWidth + gap);
 
-const ProjectAnimations = ({ ids, pinContainerId = 'projects' }) => {
+const ProjectAnimations = ({ ids, pinContainerId = "projects" }) => {
+  const isMobile = useMediaQuery({ maxWidth: 1023 });
+  const isSmall = useMediaQuery({ maxWidth: 767 });
+
   useGSAP(() => {
+    if (isMobile) return;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: `#${pinContainerId}`,
         start: "top+=50px top",
         end: "+=1200px",
         scrub: true,
-        pin: true
+        pin: true,
       },
     });
 
@@ -45,6 +52,51 @@ const ProjectAnimations = ({ ids, pinContainerId = 'projects' }) => {
       x: `-=${moveDistance}`, // Move till rightmost card is in view
       ease: "power1.out",
       duration: 1,
+    });
+  }, []);
+
+  useGSAP(() => {
+    if (!isMobile) return;
+
+    const mobIds = ids
+      .slice(-3)
+      .reverse()
+      .map((id) => `#${id}-mob`);
+
+    const animationScrollDistance = mobIds.length * 500;
+
+    // Pin the container starting when it reaches the top
+    ScrollTrigger.create({
+      trigger: `#${pinContainerId}`,
+      start: "top top",
+      end: `+=${animationScrollDistance * 0.9}px`,
+      pin: true,
+    });
+
+    // Start animation when container reaches 20%
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: `#${pinContainerId}`,
+        start: `top ${isSmall ? 'top' : '10%'}`,
+        end: `+=${animationScrollDistance}px`,
+        scrub: true,
+      },
+    });
+
+    mobIds.forEach((id, i) => {
+      tl.from(id, {
+        yPercent: 100,
+        duration: 2,
+        ease: "power2.out",
+      }).from(
+        id,
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power3.out",
+        },
+        "<"
+      );
     });
   }, []);
 

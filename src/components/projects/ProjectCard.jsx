@@ -4,12 +4,10 @@ import Link from "next/link";
 import React from "react";
 import {
   Card,
-  CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
 } from "@/components/ui/Card";
-import Badge from "@/components/ui/Badge";
 import { techLogos } from "@/data/me";
 
 const ProjectCard = ({ project, className, id }) => {
@@ -22,6 +20,8 @@ const ProjectCard = ({ project, className, id }) => {
             src={project.src}
             alt={project.alt}
             fill
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQ..."
             className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />

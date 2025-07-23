@@ -18,7 +18,7 @@ const Projects = () => {
       <ProjectDeck />
 
       {/* link to github */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2">
         <Button
           id={'proj-git-btn'}
           variant="outline"
