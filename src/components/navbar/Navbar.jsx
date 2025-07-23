@@ -1,4 +1,3 @@
-import Link from "next/link";
 import NavbarAnimations from "./NavbarAnimations";
 import Hamburger from "./Hamburger";
 import NavItem from "./NavItem";
@@ -19,13 +18,22 @@ const Navbar = () => {
         id="navbar"
         className="fixed top-0 w-full border-b border-gray-100 bg-white z-50"
       >
-        <div className="p-4 container mx-auto flex justify-between items-center">
+        <div className="px-4 py-3 container mx-auto flex justify-between items-center">
           <Name />
-          <ul className="hidden md:flex items-center gap-8 text-gray-600">
-            {links.map(({ text, href }) => (
-              <NavItem key={href} text={text} href={href} className='hover:text-gray-900 transition-colors' />
-            ))}
-          </ul>
+          <div id='nav-bar-btns-container' className="hidden md:block relative">
+            {/* main buttons */}
+            <ul className="flex items-center px-5 gap-4 text-gray-600">
+              {links.map(({ text, href }) => (
+                <NavItem key={href} text={text} href={href} className='px-4 py-1 anim-nav-buttons' /> // animate hover
+              ))}
+            </ul>
+            {/* overlay */}
+            <ul aria-hidden className="anim-nav-overlay absolute-center flex items-center px-5 gap-4 bg-primary text-primary-foreground">
+              {links.map(({ text, href }) => (
+                <NavItem key={href} text={text} href={href} className='px-4 py-1' />
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
 

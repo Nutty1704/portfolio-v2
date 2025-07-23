@@ -12,9 +12,12 @@ export const animConfig = {
   end: 'bottom 4%-50px',
 }
 
+const navBtnsContainerId = 'nav-bar-btns-container';
+
 const NavbarAnimations = () => {
   const isMobile = useMediaQuery({ maxWidth: animationBreakpoint });
 
+  // handles transition between navbar and hamburger
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -41,6 +44,62 @@ const NavbarAnimations = () => {
       },
       '-=0.3'
     )
+  }, []);
+
+  // handles nav bar buttons overlay/hover animation
+  useGSAP(() => {
+    const navButtons = Array.from(document.querySelectorAll(`#${navBtnsContainerId} .anim-nav-buttons`));
+    const overlay = document.querySelector(".anim-nav-overlay");
+    const container = document.getElementById(navBtnsContainerId);
+
+    const overlayWidth = overlay.getBoundingClientRect().width;
+    const overlayLeft = overlay.getBoundingClientRect().left;
+
+    // Start positioned off-screen to the left
+    gsap.set(overlay, {
+      "--l": "100%",
+      "--r": "-5%",
+    });
+
+    const handleMouseEnter = (e) => {
+      const rect = e.target.getBoundingClientRect();
+
+      const leftPercent = ((rect.left - overlayLeft) * 100) / overlayWidth;
+      const widthPercent = (rect.width * 100) / overlayWidth;
+
+      console.log();
+
+      gsap.to(overlay, {
+        "--l": `${leftPercent}%`,
+        "--r": `${100 - (leftPercent + widthPercent)}%`,
+        duration: 0.3,
+        delay: 0.15,
+        ease: "back.out",
+      });
+    };
+
+    const handleContainerMouseLeave = (e) => {
+      gsap.to(overlay, {
+        "--l": '100%',
+        '--r': '-5%',
+        duration: 0.3,
+        delay: 0.2,
+        ease: 'power3.in'
+      });
+    }
+
+    navButtons.forEach((btn) => {
+      btn.addEventListener("mouseenter", handleMouseEnter);
+    });
+
+    container.addEventListener('mouseleave', handleContainerMouseLeave);
+
+    return () => {
+      navButtons.forEach((btn) => {
+        btn.removeEventListener("mouseenter", handleMouseEnter);
+      });
+      container.removeEventListener('mouseleave', handleContainerMouseLeave);
+    };
   }, []);
 
   return <></>;
