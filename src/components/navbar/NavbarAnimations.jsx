@@ -52,9 +52,6 @@ const NavbarAnimations = () => {
     const overlay = document.querySelector(".anim-nav-overlay");
     const container = document.getElementById(navBtnsContainerId);
 
-    const overlayWidth = overlay.getBoundingClientRect().width;
-    const overlayLeft = overlay.getBoundingClientRect().left;
-
     // Start positioned off-screen to the left
     gsap.set(overlay, {
       "--l": "100%",
@@ -62,6 +59,8 @@ const NavbarAnimations = () => {
     });
 
     const handleMouseEnter = (e) => {
+      const overlayWidth = overlay.getBoundingClientRect().width;
+      const overlayLeft = overlay.getBoundingClientRect().left;
       const rect = e.target.getBoundingClientRect();
 
       const leftPercent = ((rect.left - overlayLeft) * 100) / overlayWidth;
