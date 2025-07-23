@@ -22,7 +22,7 @@ const Navbar = () => {
           <Name />
           <div id='nav-bar-btns-container' className="hidden md:block relative">
             {/* main buttons */}
-            <ul className="flex items-center px-5 gap-4 text-gray-600">
+            <ul className="flex items-center px-5 gap-4 text-gray-800">
               {links.map(({ text, href }) => (
                 <NavItem key={href} text={text} href={href} className='px-4 py-1 anim-nav-buttons' /> // animate hover
               ))}
