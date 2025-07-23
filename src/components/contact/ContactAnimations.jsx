@@ -9,10 +9,9 @@ import { useMediaQuery } from "react-responsive";
 const contactSectionId = "contact";
 const leftId = "contact-get-in-touch";
 const rightId = "contact-card";
-const footerHeight = 450;
 
 const ContactAnimations = () => {
-  const reduceAnim = useMediaQuery({ maxWidth: animationBreakpoint });
+  const isMobile = useMediaQuery({ maxWidth: animationBreakpoint });
 
   // get in touch animatons
   useGSAP(() => {
@@ -55,7 +54,7 @@ const ContactAnimations = () => {
       },
     });
 
-    tl.addLabel("Left Header animation")
+    tl.addLabel("leftHeaderAnimation")
       .from(headerSplit.chars, {
         opacity: 0,
         y: 20,
@@ -64,7 +63,7 @@ const ContactAnimations = () => {
         ease: "back.out",
         stagger: 0.04,
       })
-      .addLabel("Left Paragraph Animation")
+      .addLabel("leftParagraphAnimation")
       .from(paragraphSplit.lines, {
         opacity: 0,
         y: 20,
@@ -73,14 +72,26 @@ const ContactAnimations = () => {
         ease: "back.out",
         stagger: 0.08,
       })
-      .addLabel("Card Move in Animation")
-      .from(card, {
-        yPercent: 100,
-        opacity: 0,
-        duration: 1,
-        ease: "circ.out",
-      }, '-=0.1');
-
+      .addLabel("cardMoveInAnimation")
+      .from(
+        card,
+        isMobile
+          ? {
+              // Mobile: simple fade with slight scale
+              opacity: 0,
+              scale: 0.95,
+              duration: 0.65,
+              ease: "power2.out",
+            }
+          : {
+              // Desktop: slide up from bottom
+              yPercent: 100,
+              opacity: 0,
+              duration: 1,
+              ease: "circ.out",
+            },
+        isMobile ? "leftParagraphAnimation" : "-=0.1"
+      );
 
     // swipe animations
     targetsScale.forEach((scTarget, i) => {
@@ -95,16 +106,20 @@ const ContactAnimations = () => {
           ease: "back.out",
           duration: 0.18,
         },
-        i === 0 ? '<0.05' : '-=0.25'
+        i === 0 ? "<0.05" : "-=0.25"
       );
 
       // move logo left
-      tl.to(scTarget, {
-        x: 0,
-        rotate: 0,
-        duration: 0.93,
-        ease: "power2.out",
-      }, '<0.13');
+      tl.to(
+        scTarget,
+        {
+          x: 0,
+          rotate: 0,
+          duration: 0.93,
+          ease: "power2.out",
+        },
+        "<0.13"
+      );
 
       // adjust clip path to reveal from right
       tl.to(
