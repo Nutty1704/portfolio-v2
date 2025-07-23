@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const getAnimProperties = (xOffset, yOffset, moveSpeed) => {
   const distance = Math.sqrt(
@@ -23,10 +24,12 @@ const Float = ({
   maxStepX = 30, 
   maxStepY = 27, 
   moveSpeed = 5,
-  disabled = false,
+  playOnMobile = true,
+  mobileBreakpoint = 1023,
   ease = 'sine.inOut' 
 }) => {
   const timelineRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: mobileBreakpoint });
 
   // get random offset based on step size
   const getRandomPoint = () => {
@@ -74,7 +77,9 @@ const Float = ({
 
   // animate float with optimization
   useGSAP(() => {
-    if (!elementId || !parentId || disabled) return;
+    if (!elementId || !parentId) return;
+
+    if (isMobile && !playOnMobile) return;
 
     const element = document.getElementById(elementId);
     const parent = document.getElementById(parentId);
