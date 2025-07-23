@@ -25,7 +25,7 @@ const Contact = () => {
               <ContactCard />
             </div>
             {/* Absolutely positioned animated version */}
-            <div className="absolute inset-0 contact-card-animate">
+            <div className="absolute inset-0">
               <ContactCard id='contact-card' />
             </div>
           </div>
