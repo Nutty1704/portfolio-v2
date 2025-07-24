@@ -7,7 +7,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-} from "@/components/ui/Card";
+} from "@/components/ui/card";
 import { techLogos } from "@/data/me";
 
 const ProjectCard = ({ project, className, id }) => {
