@@ -1,5 +1,6 @@
 "use client";
 
+import { animationBreakpoint } from "@/app/config";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,7 +10,7 @@ const getMovement = (i, cardWidth, start, gap, center) =>
   start - center + cardWidth / 2 + i * (cardWidth + gap);
 
 const ProjectAnimations = ({ ids, pinContainerId = "projects" }) => {
-  const isMobile = useMediaQuery({ maxWidth: 1023 });
+  const isMobile = useMediaQuery({ maxWidth: animationBreakpoint });
   const isSmall = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {

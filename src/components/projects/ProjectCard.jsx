@@ -13,7 +13,7 @@ import { techLogos } from "@/data/me";
 const ProjectCard = ({ project, className, id }) => {
   return (
     <div id={id} className={`${className}`}>
-      <Card className="w-[500px] h-[750px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col border border-gray-200 !pt-0">
+      <Card className="w-[500px] h-[750px] max-h-[70vh] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col border border-gray-200 !pt-0">
         {/* Image Section */}
         <div className="relative h-[60%] overflow-hidden">
           <Image

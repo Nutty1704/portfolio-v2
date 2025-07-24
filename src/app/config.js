@@ -1,1 +1,1 @@
-export const animationBreakpoint = 767;
+export const animationBreakpoint = 1023;

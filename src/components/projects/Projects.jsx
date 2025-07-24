@@ -8,7 +8,7 @@ import ProjectDeck from "./ProjectDeck";
 
 const Projects = () => {
   return (
-    <section id='projects' className="w-full min-h-[105vh] py-20 lg:py-24 relative">
+    <section id='projects' className="w-full min-h-[105vh] py-20 lg:py-14 xl:py-24 relative">
       <SectionHeader
         title={"Featured Projects"}
         subtitle={"Here are some projects I've worked on recently"}
@@ -18,7 +18,7 @@ const Projects = () => {
       <ProjectDeck />
 
       {/* link to github */}
-      <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-8 md:bottom-16 lg:bottom-6 2xl:bottom-16 left-1/2 -translate-x-1/2">
         <Button
           id={'proj-git-btn'}
           variant="outline"

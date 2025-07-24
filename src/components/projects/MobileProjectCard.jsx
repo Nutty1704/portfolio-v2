@@ -12,7 +12,7 @@ import { techLogos } from "@/data/me";
 export default function MobileProjectCard({ project, className = "", style, id }) {
   return (
     <div id={id} className={`${className} w-full`} style={style}>
-      <Card className="w-full bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 !p-0">
+      <Card className="w-full md:w-[75vw] mx-auto bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 !p-0">
         {/* Horizontal Layout Container */}
         <div className="flex flex-col h-[55vh]">
           {/* Image Section - Left Side */}
