@@ -68,7 +68,7 @@ const ProjectAnimations = ({ ids, pinContainerId = "projects" }) => {
     // Pin the container starting when it reaches the top
     ScrollTrigger.create({
       trigger: `#${pinContainerId}`,
-      start: "top top",
+      start: "top+=50px top",
       end: `+=${animationScrollDistance * 0.9}px`,
       pin: true,
     });

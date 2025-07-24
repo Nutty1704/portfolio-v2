@@ -14,7 +14,7 @@ export default function MobileProjectCard({ project, className = "", style, id }
     <div id={id} className={`${className} w-full`} style={style}>
       <Card className="w-full bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 !p-0">
         {/* Horizontal Layout Container */}
-        <div className="flex flex-col h-[50vh]">
+        <div className="flex flex-col h-[55vh]">
           {/* Image Section - Left Side */}
           <div className="relative h-3/5 flex-shrink-0 overflow-hidden">
             <Image

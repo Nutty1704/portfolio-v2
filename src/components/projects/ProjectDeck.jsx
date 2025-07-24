@@ -13,7 +13,7 @@ const rotations = [
 
 const ProjectDeck = () => {
   return (
-    <div className="relative w-full lg:py-20 overflow-visible min-h-[50vh] lg:min-h-[75vh] my-12">
+    <div className="relative z-20 w-full pb-16 -mt-5 lg:mt-0 lg:py-20 overflow-visible min-h-[50vh] lg:min-h-[75vh]">
       <ProjectAnimations ids={projects.map((project) => project.id)} />
       <div className="hidden lg:block">
         {projects.map((project, i) => (
