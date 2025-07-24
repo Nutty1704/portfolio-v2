@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-} from "@/components/ui/Card";
+} from "@/components/ui/card";
 import Magnetic from "../animations/Magnetic";
 import SendMessageForm from "./form/SendMessageForm";
 
