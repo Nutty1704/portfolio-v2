@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
+import { Textarea } from "@/components/ui/TextArea";
 
 const labelClass = "text-sm font-medium text-gray-700";
 
