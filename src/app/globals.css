@@ -76,6 +76,10 @@ body {
   clip-path: inset(10% var(--r, 100%) 10% var(--l, -2%) round 9999px);
 }
 
+.projects-bg-gradient {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+}
+
 #blob-1 {
   top: 60dvh;
   right: -13%;

@@ -1,7 +1,6 @@
 import { projects } from "@/data/me";
 import ProjectCard from "./ProjectCard";
 import ProjectAnimations from "./ProjectAnimations";
-import MobileProjectCard from "./MobileProjectCard";
 
 const rotations = [
   "rotate-[2deg]",
@@ -13,9 +12,10 @@ const rotations = [
 
 const ProjectDeck = () => {
   return (
-    <div id='projects-deck' className="relative z-20 w-full pb-16 -mt-5 lg:mt-3 lg:py-3 2xl:py-20 overflow-visible min-h-[50vh] md:min-h-[60vh] lg:min-h-[62.5vh] 2xl:min-h-[75vh]">
+    <div id='projects-deck' className="relative z-20 w-full -mt-5 lg:mt-3 2xl:py-20 overflow-visible min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] 2xl:min-h-[75vh]">
       <ProjectAnimations ids={projects.map((project) => project.id)} />
       <div className="hidden lg:block">
+        <ProjectCard.placeholder />
         {projects.map((project, i) => (
           <ProjectCard
             key={project.id}
@@ -27,9 +27,10 @@ const ProjectDeck = () => {
           />
         ))}
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden my-3">
+        <ProjectCard.placeholder />
         {projects.slice(-3).reverse().map((project, i) => (
-          <MobileProjectCard
+          <ProjectCard
             key={project.id}
             project={project}
             id={`${project.id}-mob`}

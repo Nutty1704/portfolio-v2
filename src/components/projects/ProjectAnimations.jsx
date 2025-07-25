@@ -21,7 +21,7 @@ const ProjectAnimations = ({ ids, pinContainerId = "projects" }) => {
         trigger: `#${pinContainerId}`,
         start: "top+=50px top",
         end: "+=1200px",
-        scrub: true,
+        scrub: 1.4,
         pin: true,
       },
     });
@@ -46,7 +46,7 @@ const ProjectAnimations = ({ ids, pinContainerId = "projects" }) => {
       rotate: 0,
       ease: "power1.out",
       stagger: 0.1,
-      duration: 2,
+      duration: 1.7,
     });
 
     tl.to(reversedIds, {
