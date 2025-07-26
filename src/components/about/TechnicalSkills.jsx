@@ -5,7 +5,7 @@ import Skills from "./Skills";
 
 const TechnicalSkills = () => {
   return (
-    <div className="space-y-8">
+    <div id='my-skills-container' className="space-y-8">
       <h3 className="text-xl lg:text-2xl font-semibold text-gray-900">Technical Skills</h3>
 
       <div className="space-y-5">

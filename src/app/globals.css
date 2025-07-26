@@ -80,6 +80,10 @@ body {
   background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
 }
 
+.clip-box {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
 #blob-1 {
   top: 60dvh;
   right: -13%;

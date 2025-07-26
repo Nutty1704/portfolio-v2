@@ -3,7 +3,7 @@ import Badge from "../ui/Badge";
 
 const Skills = ({ Icon, title, skills, containerClass, iconClass }) => {
   return (
-    <div className={`${containerClass}`}>
+    <div className={`anim-skills ${containerClass}`}>
       <h4 className="font-inter font-medium text-gray-900 mb-2 flex items-center gap-2.5">
         <Icon className={`h-4 w-4 text-primary ${iconClass}`} />
         { title }

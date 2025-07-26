@@ -2,8 +2,8 @@ import React from "react";
 
 const MyJourney = () => {
   return (
-    <div className="space-y-6">
-      <h3 className="text-xl lg:text-2xl font-semibold text-gray-900">My Journey</h3>
+    <div id='my-journey-container' className="space-y-6">
+      <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 clip-box">My Journey</h3>
       <p className="text-gray-600 leading-relaxed">
         Recently graduated with a Bachelor's in Computer Science, I've spent the
         last few years diving deep into web development. From building my first
