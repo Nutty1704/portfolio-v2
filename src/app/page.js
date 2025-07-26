@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import Hero from "@/components/hero/Hero";
 import Navbar from "@/components/navbar/Navbar";
 import Initialize from "./Initialize";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="relative min-h-screen w-full !p-0 !m-0">
       <div className="bg-background relative overflow-x-hidden z-10">
         <Initialize />
+        <Analytics />
         <div id='blob-1' data-scroll data-scroll-speed='0.3' aria-hidden className="blob" />
         <div id='blob-2' data-scroll data-scroll-speed='0.15' aria-hidden className="blob" />
         <Navbar />
