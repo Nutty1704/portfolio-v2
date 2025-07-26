@@ -174,10 +174,10 @@ const NotFound = () => {
         {/* Error Message */}
         <div className="text-center mb-8">
           <h1 ref={titleRef} className="text-2xl mb-3 opacity-0">
-            Well, this is awkward... 😅
+            Page Not Found
           </h1>
           <p ref={subtitleRef} className="text-base opacity-0">
-            The page you wanted ghosted harder than your last Tinder match
+            The page you're looking for doesn't exist or has been moved.
           </p>
         </div>
 
