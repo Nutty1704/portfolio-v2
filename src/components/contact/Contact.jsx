@@ -19,7 +19,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <GetInTouch />
-          <div className="relative">
+          <div id='contact-card-container' className="relative overflow-hidden">
             {/* Invisible placeholder to maintain grid space */}
             <div className="invisible pointer-events-none" aria-hidden inert>
               <ContactCard />

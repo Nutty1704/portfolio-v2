@@ -9,6 +9,7 @@ import { useMediaQuery } from "react-responsive";
 const contactSectionId = "contact";
 const leftId = "contact-get-in-touch";
 const rightId = "contact-card";
+const rightContainerId = "contact-card-container";
 
 const ContactAnimations = () => {
   const isMobile = useMediaQuery({ maxWidth: animationBreakpoint });
@@ -16,6 +17,7 @@ const ContactAnimations = () => {
   // get in touch animatons
   useGSAP(() => {
     const card = document.getElementById(rightId);
+    const cardContainer = document.getElementById(rightContainerId);
 
     const headerSplit = new SplitText(`#${leftId} h3`, {
       type: "words, chars",
@@ -91,7 +93,16 @@ const ContactAnimations = () => {
               ease: "circ.out",
             },
         isMobile ? "leftParagraphAnimation" : "-=0.1"
-      );
+      )
+      .call(
+        () => {
+          if (!isMobile) {
+            cardContainer.classList.remove("overflow-hidden");
+          }
+        },
+        null,
+        ">"
+      ); // ">" means at the end of previous animation
 
     // swipe animations
     targetsScale.forEach((scTarget, i) => {

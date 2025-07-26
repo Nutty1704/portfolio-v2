@@ -12,7 +12,7 @@ import SendMessageForm from "./form/SendMessageForm";
 const ContactCard = ({ id }) => {
   return (
     <Card id={id} className="border border-input-border !shadow-xl max-w-[500px] perspective-distant mx-auto">
-      { id && <Magnetic id={id} threshold={0.035} leaveDealy={2} /> }
+      { id && <Magnetic id={id} xThreshold={0.07} yThreshold={0.05} leaveDealy={2} /> }
       <CardHeader>
         <CardTitle className='text-2xl mb-1'>Send me a message</CardTitle>
         <CardDescription className='text-gray-600'>
