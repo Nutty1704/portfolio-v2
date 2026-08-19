@@ -4,8 +4,8 @@ import nodemailer from 'nodemailer';
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.NEXT_PUBLIC_GMAIL_USER,
-    pass: process.env.NEXT_PUBLIC_GMAIL_APP_PASSWORD
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD
   }
 });
 
@@ -32,8 +32,8 @@ export async function POST(request) {
 
     // Send email to yourself
     await transporter.sendMail({
-      from: process.env.NEXT_PUBLIC_GMAIL_USER,
-      to: process.env.NEXT_PUBLIC_GMAIL_USER,
+      from: process.env.GMAIL_USER,
+      to: process.env.GMAIL_USER,
       subject: `Portfolio Contact: ${subject || 'New Message'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
