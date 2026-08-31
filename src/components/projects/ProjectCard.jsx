@@ -1,4 +1,4 @@
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -45,16 +45,6 @@ const ProjectCard = ({ project, className, id, style }) => {
                       className="text-gray-200 hover:text-white hover:scale-110 transition-all duration-200"
                     >
                       <Github className="w-5 h-5" />
-                    </Link>
-                  )}
-                  {project.live && (
-                    <Link
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-200 hover:text-white hover:scale-110 transition-all duration-200"
-                    >
-                      <ExternalLink className="w-5 h-5" />
                     </Link>
                   )}
                 </div>

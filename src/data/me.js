@@ -4,40 +4,44 @@ export const links = {
   mail: "mailto:abhijitupadhyay03@gmail.com",
 };
 
-export const frontendSkills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "HTML5",
-  "CSS3",
-];
+export const languageSkills = ["Go", "Python", "TypeScript", "SQL"];
 
-export const backendSkills = [
-  "Node.js",
-  "Express",
-  "Python",
-  "PostgreSQL",
-  "MongoDB",
-  "REST APIs",
-];
+export const cloudPlatformSkills = ["AWS", "Kubernetes", "Terraform", "Buildkite"];
 
-export const otherSkills = ["Git", "Docker", "AWS", "Vercel", "Figma", "Jest"];
+export const backendDataSkills = ["FastAPI", "PostgreSQL", "Kafka", "Node.js"];
+
+export const engineeringSkills = ["CI/CD", "Datadog", "OAuth", "React"];
 
 export const experienceColumnInfo = [
   {
+    title: "Software Engineer",
+    subtitle: "Rokt",
+    dateText: "Sep 2025 - Aug 2026",
+    highlights: [
+      "Built high-throughput Go auction services processing millions of transactions daily with p99 latency below 99 ms.",
+      "Developed a self-service experimentation platform spanning Kubernetes, RDS PostgreSQL, Buildkite, FastAPI, React, TypeScript, and Kubeflow.",
+      "Migrated 13 Kubeflow pipelines from v1 to v2.",
+      "Built anomaly-detection and telemetry tooling to improve operational visibility.",
+      "Improved simulator-to-production agreement from 95% to 99.9%.",
+    ],
+  },
+  {
     title: "Private Tutor",
-    subtitle: "Self Employed",
+    subtitle: "Freelance (via Vicky's Classroom)",
     dateText: "Nov 2023 - Feb 2024, Nov 2024 - Feb 2025",
-    description:
-      "Delivered personalized math instruction to 6 middle school students. Created 50+ custom problem sets and helped improve average test scores by 15 marks in 3 months.",
+    highlights: [
+      "Delivered personalized mathematics instruction to six middle-school students.",
+      "Created 50+ custom problem sets and improved average test scores by 15 marks in three months.",
+    ],
   },
   {
     title: "Packaging Supervisor",
     subtitle: "Chhattisgarh Agro Biotech Lab",
     dateText: "Aug 2021 - May 2022",
-    description:
-      "Oversaw 50+ packaging cycles with 96% on-time completion. Conducted QA on 80+ batches and enhanced packaging efficiency by resolving bottlenecks.",
+    highlights: [
+      "Oversaw 50+ packaging cycles with 96% on-time completion.",
+      "Conducted quality assurance on 80+ batches and improved packaging efficiency by resolving bottlenecks.",
+    ],
   },
 ];
 
@@ -46,15 +50,17 @@ export const educationColumnInfo = [
     title: "Bachelor of Computer Science",
     subtitle: "Monash University, Clayton, VIC",
     dateText: "July 2022 - July 2025",
-    description:
+    highlights: [
       "Major in Advanced Computer Science. WAM: 88.711, GPA: 3.875/4.00. Relevant modules: Full Stack Development, Algorithms and Data Structures, Object Oriented Programming.",
+    ],
   },
   {
     title: "High School Diploma",
     subtitle: "Delhi Public School, Raipur, Chhattisgarh, India",
     dateText: "Graduated July 2021",
-    description:
+    highlights: [
       "Major in Science (Physics, Chemistry & Math). Grade: 97.6%. Received Excellence Award for highest grade in Computer Science.",
+    ],
   },
 ];
 
@@ -91,7 +97,6 @@ export const projects = [
     src: "/projects/p3.png",
     alt: "Events Management App dashboard page",
     skills: ["angular", "bootstrap", "express", "typescript", "mongodb"],
-    live: undefined,
     repo: "https://github.com/Nutty1704/events-mangement-app",
   },
   {
@@ -105,7 +110,6 @@ export const projects = [
     src: "/projects/p5.png",
     alt: "Markdown input on the left and html output on the right; screenshot of the application",
     skills: ["haskell", "javascript", "html", "css"],
-    live: undefined,
     repo: "https://github.com/Nutty1704/md-to-html-convertor",
   },
   {
@@ -119,7 +123,6 @@ export const projects = [
     src: "/projects/p2.png",
     alt: "Chat screen",
     skills: ["react", "tailwind", "express", "javascript", "mongodb"],
-    live: undefined,
     repo: "https://github.com/Nutty1704/chat-app",
   },
   {
@@ -141,7 +144,6 @@ export const projects = [
       "githubactions",
       "digitalocean",
     ],
-    live: undefined,
     repo: "https://github.com/Nutty1704/email-inbox-automation",
   },
   {
@@ -163,7 +165,6 @@ export const projects = [
       "githubactions",
       "digitalocean",
     ],
-    live: "https://www.tastemonash.app/",
     repo: "https://github.com/Nutty1704/eprp-frontend",
   },
   {
@@ -186,7 +187,6 @@ export const projects = [
       "githubactions",
       "digitalocean",
     ],
-    live: "https://donezo.me/",
     repo: "https://github.com/Nutty1704/taskmanager",
   },
 ];

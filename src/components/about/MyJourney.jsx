@@ -5,15 +5,17 @@ const MyJourney = () => {
     <div id='my-journey-container' className="space-y-6">
       <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 clip-box">My Journey</h3>
       <p className="text-gray-600 leading-relaxed">
-        Recently graduated with a Bachelor's in Computer Science, I've spent the
-        last few years diving deep into web development. From building my first
-        "Hello World" to creating full-scale applications, I'm constantly
-        learning and pushing the boundaries of what's possible.
+        I&apos;m an early-career software engineer with a Computer Science
+        background and hands-on experience working on production systems at
+        Rokt. I&apos;ve contributed to backend services, experimentation tooling,
+        and monitoring workflows using technologies such as Go, Python,
+        Kubernetes, PostgreSQL, and React.
       </p>
       <p className="text-gray-600 leading-relaxed">
-        I believe in writing clean, maintainable code and creating user
-        experiences that are both functional and delightful. When I'm not
-        coding, you'll find me exploring new technologies or finding new ideas for my next project.
+        I&apos;m motivated by opportunities to learn from strong engineering teams
+        and build software that is reliable, useful, and maintainable. Outside
+        of work, I enjoy exploring new technologies and continuing to sharpen
+        my craft through practical projects.
       </p>
     </div>
   );

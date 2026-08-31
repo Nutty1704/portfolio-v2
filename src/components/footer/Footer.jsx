@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="z-10">
           <div className="text-center space-y-3">
             <p className="">
-              © 2025 Abhijit Upadhyay. Built with Next.js, Tailwind CSS, and
+              © 2026 Abhijit Upadhyay. Built with Next.js, Tailwind CSS, and
               GSAP.
             </p>
             <div className="flex justify-center">

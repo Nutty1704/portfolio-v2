@@ -4,7 +4,7 @@ import TechnicalSkills from "./TechnicalSkills";
 import SectionHeader from "../ui/SectionHeader";
 import AboutAnimations from "./AboutAnimations";
 
-const subtitle = "I'm a passionate fullstack developer with a strong foundation in computer science and a love for creating digital experiences that make a difference."
+const subtitle = "Software engineer focused on building reliable production systems across backend, platform, and full-stack development."
 
 const About = () => {
   return (

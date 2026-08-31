@@ -13,7 +13,7 @@ const GridColumn = ({ id, title, columnInfo = [], color }) => {
             key={i}
             title={col.title}
             subtitle={col.subtitle}
-            description={col.description}
+            highlights={col.highlights}
             dateText={col.dateText}
             color={color}
           />

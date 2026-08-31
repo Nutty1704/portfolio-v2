@@ -2,7 +2,6 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
 
 const TimelineAnimation = ({ columnId }) => {
   // Get all required elements
@@ -39,7 +38,8 @@ const TimelineAnimation = ({ columnId }) => {
 
     // Animate text content for this point
     const heading = container.querySelector("h4");
-    const paragraphs = Array.from(container.querySelectorAll("p"));
+    const metadata = Array.from(container.querySelectorAll("p"));
+    const highlights = Array.from(container.querySelectorAll(".anim-highlight"));
 
     const animConfig = {
       y: 25,
@@ -51,17 +51,14 @@ const TimelineAnimation = ({ columnId }) => {
     // animate heading
     tl.from(heading, animConfig, `${labelName}-=0.25`);
 
-    // Animate title and dates
-    tl.from(paragraphs.slice(0, -1), {
+    // Animate organisation and date
+    tl.from(metadata, {
       ...animConfig,
       stagger: 0.1,
     }, '>');
 
-    // Animate description
-    const lastParagraph = paragraphs[paragraphs.length - 1];
-    const splitText = new SplitText(lastParagraph, { type: "lines" });
-
-    tl.from(splitText.lines, {
+    // Animate highlights from top to bottom
+    tl.from(highlights, {
       ...animConfig,
       stagger: 0.1,
     }, '>');

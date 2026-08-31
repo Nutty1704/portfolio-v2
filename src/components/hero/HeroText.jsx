@@ -10,12 +10,11 @@ const HeroText = ({ containerClass }) => {
       <div className="flex flex-col gap-8">
         <div className="space-y-4">
           <h2 className="text-2xl lg:text-3xl text-gray-600 font-light">
-            Fullstack Developer
+            Software Engineer
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-            Recent Computer Science graduate passionate about creating
-            innovative web applications. I specialize in React, Node.js, and
-            modern web technologies to build scalable solutions.
+            I build reliable backend, platform, and full-stack systems with
+            Go, Python, TypeScript, AWS, Kubernetes, Terraform, and CI/CD.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const GridElement = ({ title, subtitle, dateText, description, color }) => {
+const GridElement = ({ title, subtitle, dateText, highlights, color }) => {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col gap-0 items-center pb-1.5">
@@ -13,9 +13,11 @@ const GridElement = ({ title, subtitle, dateText, description, color }) => {
         </h4>
         <p className={`text-${color} font-medium`}>{subtitle}</p>
         <p className="text-sm text-gray-500">{dateText}</p>
-        <p className="text-gray-600">
-          {description}
-        </p>
+        <ul className="anim-highlights list-disc space-y-1 pl-5 text-gray-600">
+          {highlights.map((highlight) => (
+            <li className="anim-highlight" key={highlight}>{highlight}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
